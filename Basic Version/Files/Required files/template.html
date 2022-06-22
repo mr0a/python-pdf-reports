@@ -1,0 +1,54 @@
+
+        <h1 align="center"><u>Report Card</u></h1>
+        <h2 align="center">Internship Exam Round 2</h2>
+        <hr>
+        <div class="personal-info">
+            <!-- <img src="{{image}}" height="200" width="200" alt="{{name}}'s Image"> -->
+            <div style="position: absolute;top: 0;">
+                <p>Name: {{name}}</p>
+                <p>Registration Number: {{info.0}}</p>
+                <p>Grade: {{info.1}}</p>
+                <p>Gender: {{info.3}}</p>
+                <p>Date of Birth: {{info.4}}</p>
+                <p>Residence: {{info.2}}, {{info.5}}</p>
+            </div>
+            <!-- <table border="1" align="center" width="80%">
+                <tr>
+                    <td width="30%">
+                        Hello sadfkjllksf jkla
+                    </td>
+                    <td width="50%">
+                        <p>Name: {{name}}</p>
+                        <p>Registration Number: info.0</p>
+                        <p>Grade: info.1</p>
+                        <p>Gender: Male</p>
+                        <p>Date of Birth: 06/06/2011</p>
+                        <p>Residence: Jacksonville, Australia</p>
+                    </td>
+                </tr>
+            </table> -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <table border="1" align="center" width="90%">
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                    <th width="{{column|length+6}}%" align="center">{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            {% for mark in marks %}
+            <tr>
+                {% for data in mark %}
+                <td align="center">{{ data }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="5" align="right">Total Score</td>
+                <td align="center">{{total}} / 100</td>
+            </tr>
+        </table>
+        <br>
